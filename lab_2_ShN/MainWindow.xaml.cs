@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using lab_2_ShN.Data;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,20 @@ namespace lab_2_ShN
         public MainWindow()
         {
             InitializeComponent();
+
+            MessageBox.Show(new BigNumber(100).ToString());
+            MessageBox.Show(new BigNumber("1234567").ToString());
+            MessageBox.Show(BigNumber.Zero.ToString());
+        }
+
+        private void EnemyImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void UpgradeButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

@@ -6,7 +6,45 @@
         xmlns:local="clr-namespace:lab_2_ShN"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
 
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image x:Name="EnemyImage"
+               Width="200" Height="200"
+               MouseLeftButtonDown="EnemyImage_MouseLeftButtonDown"
+               Cursor="Hand"/>
+
+            <TextBlock x:Name="EnemyNameText"
+                   FontSize="24" FontWeight="Bold"
+                   HorizontalAlignment="Center" Margin="0,10,0,0"/>
+
+            <TextBlock x:Name="EnemyHPText"
+                   FontSize="18"
+                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+
+            <TextBlock x:Name="EnemyRewardText"
+                   FontSize="16"
+                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20,0,0,0">
+            <TextBlock Text="Золото:" FontSize="16"/>
+            <TextBlock x:Name="PlayerGoldText" FontSize="22" FontWeight="Bold" Margin="0,0,0,15"/>
+
+            <TextBlock Text="Урон:" FontSize="16"/>
+            <TextBlock x:Name="PlayerDamageText" FontSize="22" FontWeight="Bold" Margin="0,0,0,15"/>
+
+            <TextBlock Text="Стоимость улучшения:" FontSize="16"/>
+            <TextBlock x:Name="UpgradeCostText" FontSize="18" Margin="0,0,0,10"/>
+
+            <Button x:Name="UpgradeButton"
+                Content="Улучшить урон"
+                FontSize="16" Padding="10,5"
+                Click="UpgradeButton_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

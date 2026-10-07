@@ -49,7 +49,7 @@ namespace lab_2_ShN.Data
             number = blocks.ToArray();
         }
 
-        // строка
+   
         public BigNumber(string value)
         {
             value = value.Trim();

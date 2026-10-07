@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Text.Json;
-
-namespace lab_2_ShN.Models
+﻿namespace lab_2_ShN.Models
 {
     public class EnemyIcon
     {
@@ -18,6 +12,5 @@ namespace lab_2_ShN.Models
         }
 
         public override string ToString() => Name;
-
-    }   
+    }
 }

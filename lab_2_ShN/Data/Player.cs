@@ -30,9 +30,9 @@ namespace lab_2_ShN.Models
             Gold = Gold - UpgradeCost;
             UpgradeLevel++;
 
-            Damage = BigNumber.MultiplyPercent(Damage, 120);
+            Damage = Damage * 2;
 
-            UpgradeCost = BigNumber.MultiplyPercent(UpgradeCost, 120) * UpgradeLevel;
+            UpgradeCost = UpgradeCost * 2;
 
             return true;
         }

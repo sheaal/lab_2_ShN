@@ -49,9 +49,30 @@ namespace lab_2_ShN.Data
         public void LoadFromJson(string path)
         {
             enemies.Clear();
+
+            if (!File.Exists(path))
+                return;
+
             string json = File.ReadAllText(path);
-            var loaded = JsonSerializer.Deserialize<List<CEnemyTemplate>>(json);
-            if (loaded != null) enemies.AddRange(loaded);
+
+            var legacy = JsonSerializer.Deserialize<List<CEnemyTemplateLegacy>>(json);
+            if (legacy == null) return;
+
+            foreach (var l in legacy)
+            {
+                enemies.Add(new CEnemyTemplate(
+                    l.Name,
+                    l.Icon,
+                    l.Level,
+                    new BigNumber(l.HP),
+                    new BigNumber(l.Damage),
+                    new BigNumber(l.Gold),
+                    1.0,
+                    1.0,
+                    1.0 
+                )
+                    );
+            }
         }
     }
 }

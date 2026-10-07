@@ -22,6 +22,10 @@ namespace lab_2_ShN.Models
         [JsonInclude]
         public int Gold { get; private set; }
 
+        [JsonInclude] public double SpawnChance { get; private set; }
+        [JsonInclude] public double HealthModifier { get; private set; }
+        [JsonInclude] public double GoldModifier { get; private set; }
+
         [JsonConstructor]
         public CEnemyTemplate(string name, EnemyIcon icon,
                               int level, int hp, int damage, int gold)

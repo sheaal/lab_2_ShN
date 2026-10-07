@@ -272,5 +272,12 @@ namespace lab_2_ShN.Data
         {
             return (value * new BigNumber(percent)) / new BigNumber(100);
         }
+
+        [System.Text.Json.Serialization.JsonInclude]
+        public string Value
+        {
+            get => ToString();
+            private set { /* ничего, только для десериализации через конструктор */ }
+        }
     }
 }

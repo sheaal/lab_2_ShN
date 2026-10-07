@@ -268,16 +268,18 @@ namespace lab_2_ShN.Data
 
         public static BigNumber operator /(BigNumber a, BigNumber b) => Divide(a, b);
 
-               public static BigNumber MultiplyPercent(BigNumber value, int percent)
+        public static BigNumber MultiplyPercent(BigNumber value, int percent)
         {
             return (value * new BigNumber(percent)) / new BigNumber(100);
         }
+
+        public static implicit operator BigNumber(int value) => new BigNumber(value);
 
         [System.Text.Json.Serialization.JsonInclude]
         public string Value
         {
             get => ToString();
-            private set { /* ничего, только для десериализации через конструктор */ }
+            private set {}
         }
     }
 }

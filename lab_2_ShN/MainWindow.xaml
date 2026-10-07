@@ -5,46 +5,99 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab_2_ShN"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="20">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="300"/>
-        </Grid.ColumnDefinitions>
+        Title="Пык Мык ОИПКУЫЛФОШГТВ" Height="450" Width="800">
+  
+    <Window.Background>
+        <ImageBrush ImageSource="img/фондээ.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
 
-        <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Image x:Name="EnemyImage"
-               Width="200" Height="200"
-               MouseLeftButtonDown="EnemyImage_MouseLeftButtonDown"
-               Cursor="Hand"/>
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="1" Opacity="0.8"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-            <TextBlock x:Name="EnemyNameText"
-                   FontSize="24" FontWeight="Bold"
-                   HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#33000000"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderBrush" Value="#1B5E20"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#551B5E20"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#881B5E20"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
-            <TextBlock x:Name="EnemyHPText"
-                   FontSize="18"
-                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+    <Grid>
+        <Rectangle Fill="Black" Opacity="0.4"/>
 
-            <TextBlock x:Name="EnemyRewardText"
-                   FontSize="16"
-                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
-        </StackPanel>
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20,0,0,0">
-            <TextBlock Text="Золото:" FontSize="16"/>
-            <TextBlock x:Name="PlayerGoldText" FontSize="22" FontWeight="Bold" Margin="0,0,0,15"/>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image x:Name="EnemyImage"
+                       Width="200" Height="200"
+                       MouseLeftButtonDown="EnemyImage_MouseLeftButtonDown"
+                       Cursor="Hand"/>
 
-            <TextBlock Text="Урон:" FontSize="16"/>
-            <TextBlock x:Name="PlayerDamageText" FontSize="22" FontWeight="Bold" Margin="0,0,0,15"/>
+                <TextBlock x:Name="EnemyNameText"
+                           FontSize="24" FontWeight="Bold"
+                           HorizontalAlignment="Center" Margin="0,10,0,0"/>
 
-            <TextBlock Text="Стоимость улучшения:" FontSize="16"/>
-            <TextBlock x:Name="UpgradeCostText" FontSize="18" Margin="0,0,0,10"/>
+                <TextBlock x:Name="EnemyHPText"
+                           FontSize="18"
+                           HorizontalAlignment="Center" Margin="0,5,0,0"/>
 
-            <Button x:Name="UpgradeButton"
-                Content="Улучшить урон"
-                FontSize="16" Padding="10,5"
-                Click="UpgradeButton_Click"/>
-        </StackPanel>
+                <TextBlock x:Name="EnemyRewardText"
+                           FontSize="16"
+                           HorizontalAlignment="Center" Margin="0,5,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20,0,0,0">
+                <TextBlock Text="Золото:" FontSize="16"/>
+                <TextBlock x:Name="PlayerGoldText" FontSize="22" FontWeight="Bold" Margin="0,0,0,15"/>
+
+                <TextBlock Text="Урон:" FontSize="16"/>
+                <TextBlock x:Name="PlayerDamageText" FontSize="22" FontWeight="Bold" Margin="0,0,0,15"/>
+
+                <TextBlock Text="Стоимость улучшения:" FontSize="16"/>
+                <TextBlock x:Name="UpgradeCostText" FontSize="18" Margin="0,0,0,10"/>
+
+                <Button x:Name="UpgradeButton"
+                        Content="Улучшить урон"
+                        FontSize="16"
+                        Click="UpgradeButton_Click"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

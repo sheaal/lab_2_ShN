@@ -21,9 +21,9 @@ namespace lab_2_ShN
         {
             InitializeComponent();
 
-            MessageBox.Show(new BigNumber(100).ToString());
-            MessageBox.Show(new BigNumber("1234567").ToString());
-            MessageBox.Show(BigNumber.Zero.ToString());
+            //MessageBox.Show(new BigNumber(100).ToString());
+            //MessageBox.Show(new BigNumber("1234567").ToString());
+            //MessageBox.Show(BigNumber.Zero.ToString());
         }
 
         private void EnemyImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
